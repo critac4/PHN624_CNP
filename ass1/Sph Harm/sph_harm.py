@@ -1,13 +1,13 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.special import sph_harm
+from scipy.special import sph_harm_y
 
 def plot_spherical_harmonic(l, m):
     theta = np.linspace(0, np.pi, 100)  
     phi = np.linspace(0, 2 * np.pi, 100)
     theta, phi = np.meshgrid(theta, phi)
 
-    Y_lm = sph_harm(m, l, phi, theta)
+    Y_lm = sph_harm_y(m, l, phi, theta)
 
     r = np.abs(Y_lm)
     x = r * np.sin(theta) * np.cos(phi)
